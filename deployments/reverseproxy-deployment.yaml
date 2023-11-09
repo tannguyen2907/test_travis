@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: reverseproxy
+  name: reverseproxy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: reverseproxy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: reverseproxy
+    spec:
+      containers:
+      - image: tinpb/reverseproxy:v1
+        name: reverseproxy
+        resources: {}
+status: {}
